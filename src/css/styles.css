@@ -1,0 +1,181 @@
+@font-face {
+  font-family: 'Wash Your Hand';
+  src: url("../assets/fonts/wash-your-hand.woff2") format("woff2"), url("../assets/fonts/wash-your-hand.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background-color: yellow;
+  font-family: 'Wash Your Hand';
+  font-size: 1.6rem;
+  margin: 0;
+  padding: 0;
+  text-align: center;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  color: black;
+  font-family: 'Wash Your Hand';
+  font-weight: 400;
+  letter-spacing: 1px;
+}
+
+#capa {
+  width: 100%;
+  height: 100vh;
+  background-color: rgba(255, 255, 255, 0.8);
+  display: none;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+}
+
+#capa > img {
+  margin: auto;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+}
+
+#seleccion {
+  width: 200px;
+  height: 40px;
+  background-color: aliceblue;
+  border: 2px solid black;
+  border-radius: 10px;
+  font-size: 16px;
+  padding: 0 10px;
+  text-align: center;
+  -webkit-appearance: none;
+}
+
+#seleccion:focus {
+  outline: none;
+}
+
+#tabla {
+  width: 400px;
+  height: 404px;
+  border: 2px solid black;
+  border-radius: 10px;
+  margin: 40px auto 0 auto;
+}
+
+#tabla > #left,
+#tabla > #right,
+#tabla > #results {
+  height: 400px;
+  float: left;
+}
+
+#tabla > #left,
+#tabla > #right {
+  width: 40%;
+  background-color: aqua;
+}
+
+#tabla > #left {
+  border-radius: 10px 0 0 10px;
+}
+
+#tabla > #results {
+  border-radius: 0 10px 10px 0;
+}
+
+#tabla > #results {
+  width: 20%;
+  background-color: aliceblue;
+}
+
+#tabla > #left,
+#tabla > #right {
+  border-right: 2px solid black;
+}
+
+#tabla > #left > ul,
+#tabla > #right > ul,
+#tabla > #results > ul {
+  list-style-type: none;
+  list-style-position: inside;
+  margin: 0;
+  padding: 0;
+}
+
+#tabla > #left > ul > li,
+#tabla > #right > ul > li,
+#tabla > #results > ul > li {
+  height: 40px;
+  border-bottom: 2px solid black;
+  font-weight: bold;
+  text-align: center;
+}
+
+#tabla > #left > ul > li:last-of-type,
+#tabla > #right > ul > li:last-of-type,
+#tabla > #results > ul > li:last-of-type {
+  border-bottom: none;
+}
+
+#tabla > #left > ul > li {
+  padding: 6px 0 0 0;
+}
+
+#tabla > #right > ul > li {
+  padding: 4px 0 0 0;
+  position: relative;
+}
+
+#tabla > #results > ul > li {
+  padding: 6px 0 0 0;
+}
+
+#tabla > #right > ul > li > input[type='number'] {
+  width: 70%;
+  height: 30px;
+  border: 1px solid #b2b4b6;
+  font-size: 16px;
+  text-align: center;
+  position: absolute;
+  top: 4px;
+  left: 4px;
+}
+
+#tabla > #right > ul > li > button {
+  width: 35px;
+  height: 30px;
+  background-color: #d2d4d6;
+  border: 1px solid #b2b4b6;
+  color: black;
+  font-weight: bold;
+  position: absolute;
+  top: 4px;
+  right: 4px;
+}
+
+#tabla > #right > ul > li > button:hover {
+  background-color: #e2e4e6;
+  cursor: pointer;
+}
+
+#aciertos {
+  width: 400px;
+  height: 50px;
+  line-height: 50px;
+  background-color: aliceblue;
+  border: 2px solid black;
+  border-radius: 10px;
+  font-size: 18px;
+  font-weight: bold;
+  margin: 40px auto 0 auto;
+  text-align: center;
+}

@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tablas de Multiplicar</title>
+    <link rel="stylesheet" href="../css/styles.css" />
+  </head>
+  <body>
+    <h1>Tablas de Multiplicar</h1>
+
+    <div id="capa">
+      <img src="../images/bien_hecho.png" alt="Bien Hecho" />
+    </div>
+
+    <select name="seleccion" id="seleccion">
+      <option value="">Selecciona la tabla</option>
+      <option value="1">1</option>
+      <option value="2">2</option>
+      <option value="3">3</option>
+      <option value="4">4</option>
+      <option value="5">5</option>
+      <option value="6">6</option>
+      <option value="7">7</option>
+      <option value="8">8</option>
+      <option value="9">9</option>
+      <option value="10">10</option>
+    </select>
+
+    <div id="tabla">
+      <div id="left">
+        <ul>
+          <li><span>-</span> x 1</li>
+          <li><span>-</span> x 2</li>
+          <li><span>-</span> x 3</li>
+          <li><span>-</span> x 4</li>
+          <li><span>-</span> x 5</li>
+          <li><span>-</span> x 6</li>
+          <li><span>-</span> x 7</li>
+          <li><span>-</span> x 8</li>
+          <li><span>-</span> x 9</li>
+          <li><span>-</span> x 10</li>
+        </ul>
+      </div>
+      <div id="right">
+        <ul>
+          <li>
+            <input type="number" min="1" disabled />
+            <button type="button" id="ok-1" disabled>ok</button>
+          </li>
+          <li>
+            <input type="number" min="1" disabled />
+            <button type="button" id="ok-2" disabled>ok</button>
+          </li>
+          <li>
+            <input type="number" min="1" disabled />
+            <button type="button" id="ok-3" disabled>ok</button>
+          </li>
+          <li>
+            <input type="number" min="1" disabled />
+            <button type="button" id="ok-4" disabled>ok</button>
+          </li>
+          <li>
+            <input type="number" min="1" disabled />
+            <button type="button" id="ok-5" disabled>ok</button>
+          </li>
+          <li>
+            <input type="number" min="1" disabled />
+            <button type="button" id="ok-6" disabled>ok</button>
+          </li>
+          <li>
+            <input type="number" min="1" disabled />
+            <button type="button" id="ok-7" disabled>ok</button>
+          </li>
+          <li>
+            <input type="number" min="1" disabled />
+            <button type="button" id="ok-8" disabled>ok</button>
+          </li>
+          <li>
+            <input type="number" min="1" disabled />
+            <button type="button" id="ok-9" disabled>ok</button>
+          </li>
+          <li>
+            <input type="number" min="1" disabled />
+            <button type="button" id="ok-10" disabled>ok</button>
+          </li>
+        </ul>
+      </div>
+      <div id="results">
+        <ul>
+          <li>🤔</li>
+          <li>🤔</li>
+          <li>🤔</li>
+          <li>🤔</li>
+          <li>🤔</li>
+          <li>🤔</li>
+          <li>🤔</li>
+          <li>🤔</li>
+          <li>🤔</li>
+          <li>🤔</li>
+        </ul>
+      </div>
+    </div>
+
+    <div id="aciertos">Número de aciertos = <span>0</span></div>
+
+    <script src="../app.js"></script>
+  </body>
+</html>
