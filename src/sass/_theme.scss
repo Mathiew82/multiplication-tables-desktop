@@ -33,6 +33,10 @@ h1 {
   left: 0;
   z-index: 1000;
 
+  &.show {
+    display: block;
+  }
+
   > img {
     margin: auto;
     position: absolute;
@@ -65,10 +69,6 @@ h1 {
   width: 100%;
   -webkit-appearance: none;
   @include btn;
-
-  &:focus {
-    outline: none;
-  }
 }
 
 .table {

@@ -36,6 +36,9 @@ h1 {
 .btn:hover {
   background-color: aqua;
 }
+.btn:focus {
+  outline: none;
+}
 
 .layer {
   width: 100%;
@@ -46,6 +49,9 @@ h1 {
   top: 0;
   left: 0;
   z-index: 1000;
+}
+.layer.show {
+  display: block;
 }
 .layer > img {
   margin: auto;

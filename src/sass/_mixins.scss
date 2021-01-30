@@ -9,4 +9,8 @@
   &:hover {
     background-color: aqua;
   }
+
+  &:focus {
+    outline: none;
+  }
 }

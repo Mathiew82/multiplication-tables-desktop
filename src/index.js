@@ -12,6 +12,7 @@ function createWindow() {
   })
   win.maximize()
   win.loadFile('src/ui/index.html')
+  win.webContents.openDevTools()
 }
 
 app.whenReady().then(createWindow)
