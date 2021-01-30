@@ -1,5 +1,5 @@
 const { app, BrowserWindow } = require('electron')
-require('electron-reload')(process.cwd())
+// require('electron-reload')(process.cwd())
 
 function createWindow() {
   const win = new BrowserWindow({
@@ -12,7 +12,7 @@ function createWindow() {
   })
   win.maximize()
   win.loadFile('src/ui/index.html')
-  win.webContents.openDevTools()
+  // win.webContents.openDevTools()
 }
 
 app.whenReady().then(createWindow)

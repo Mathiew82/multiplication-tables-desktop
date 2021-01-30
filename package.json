@@ -1,17 +1,28 @@
 {
   "name": "multiplication-tables",
   "version": "1.0.0",
-  "description": "",
+  "description": "Application for children to practice multiplication",
   "main": "src/index.js",
   "scripts": {
     "start": "electron .",
-    "sass": "compass watch"
+    "sass": "compass watch",
+    "pack": "electron-builder --dir",
+    "dist": "electron-builder -mwl",
+    "icons": "./node_modules/.bin/electron-icon-maker --input=./icon.png --output=./build"
   },
   "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "dependencies": {
+  "author": "Alberto Mateo Alcalá",
+  "license": "MIT",
+  "build": {
+    "appId": "Multiplication Tables.id",
+    "mac": {
+      "category": "games"
+    }
+  },
+  "devDependencies": {
     "electron": "^11.2.1",
+    "electron-builder": "^22.9.1",
+    "electron-icon-maker": "0.0.5",
     "electron-reload": "^1.5.0"
   }
 }
