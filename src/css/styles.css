@@ -17,17 +17,27 @@ body {
   text-align: center;
 }
 
-h1,
-h2,
-h3,
-h4 {
-  color: black;
+h1 {
+  color: #287;
   font-family: 'Wash Your Hand';
   font-weight: 400;
   letter-spacing: 1px;
+  text-shadow: 2px 2px 0 white;
 }
 
-#capa {
+.btn {
+  background-color: aliceblue;
+  border: 2px solid black;
+  border-radius: 10px;
+  font-family: 'Wash Your Hand';
+  font-size: 24px;
+  padding: 8px 15px;
+}
+.btn:hover {
+  background-color: aqua;
+}
+
+.layer {
   width: 100%;
   height: 100vh;
   background-color: rgba(255, 255, 255, 0.8);
@@ -37,8 +47,7 @@ h4 {
   left: 0;
   z-index: 1000;
 }
-
-#capa > img {
+.layer > img {
   margin: auto;
   position: absolute;
   top: 0;
@@ -47,135 +56,190 @@ h4 {
   left: 0;
 }
 
-#seleccion {
-  width: 200px;
-  height: 40px;
+.wrapper-selection {
+  width: 250px;
+  margin: 0 auto;
+  position: relative;
+}
+.wrapper-selection:after {
+  width: 0;
+  height: 0;
+  border-left: 6px solid transparent;
+  border-right: 6px solid transparent;
+  border-top: 8px solid black;
+  content: '';
+  position: absolute;
+  top: 19px;
+  right: 15px;
+}
+
+.selection {
+  width: 100%;
+  -webkit-appearance: none;
   background-color: aliceblue;
   border: 2px solid black;
   border-radius: 10px;
-  font-size: 16px;
-  padding: 0 10px;
-  text-align: center;
-  -webkit-appearance: none;
+  font-family: 'Wash Your Hand';
+  font-size: 24px;
+  padding: 8px 15px;
 }
-
-#seleccion:focus {
+.selection:hover {
+  background-color: aqua;
+}
+.selection:focus {
   outline: none;
 }
 
-#tabla {
-  width: 400px;
+.table {
+  width: 600px;
   height: 404px;
   border: 2px solid black;
   border-radius: 10px;
-  margin: 40px auto 0 auto;
+  display: none;
+  margin: 20px auto 0 auto;
 }
-
-#tabla > #left,
-#tabla > #right,
-#tabla > #results {
+.table.show {
+  display: block;
+}
+.table > .table__left,
+.table > .table__right,
+.table > .table__results {
   height: 400px;
   float: left;
 }
-
-#tabla > #left,
-#tabla > #right {
-  width: 40%;
+.table > .table__left,
+.table > .table__right {
   background-color: aqua;
 }
-
-#tabla > #left {
+.table > .table__left {
+  width: 20%;
   border-radius: 10px 0 0 10px;
 }
-
-#tabla > #results {
-  border-radius: 0 10px 10px 0;
-}
-
-#tabla > #results {
-  width: 20%;
-  background-color: aliceblue;
-}
-
-#tabla > #left,
-#tabla > #right {
-  border-right: 2px solid black;
-}
-
-#tabla > #left > ul,
-#tabla > #right > ul,
-#tabla > #results > ul {
-  list-style-type: none;
-  list-style-position: inside;
-  margin: 0;
-  padding: 0;
-}
-
-#tabla > #left > ul > li,
-#tabla > #right > ul > li,
-#tabla > #results > ul > li {
-  height: 40px;
-  border-bottom: 2px solid black;
-  font-weight: bold;
-  text-align: center;
-}
-
-#tabla > #left > ul > li:last-of-type,
-#tabla > #right > ul > li:last-of-type,
-#tabla > #results > ul > li:last-of-type {
-  border-bottom: none;
-}
-
-#tabla > #left > ul > li {
+.table > .table__left > ul > li {
   padding: 6px 0 0 0;
 }
-
-#tabla > #right > ul > li {
+.table > .table__right {
+  width: 60%;
+}
+.table > .table__right > ul > li {
   padding: 4px 0 0 0;
   position: relative;
 }
-
-#tabla > #results > ul > li {
-  padding: 6px 0 0 0;
-}
-
-#tabla > #right > ul > li > input[type='number'] {
-  width: 70%;
+.table > .table__right > ul > li > input[type='number'] {
+  width: 274px;
   height: 30px;
-  border: 1px solid #b2b4b6;
+  border: 1px solid rgba(0, 0, 0, 0.6);
   font-size: 16px;
   text-align: center;
+  padding: 0 10px;
   position: absolute;
   top: 4px;
   left: 4px;
 }
-
-#tabla > #right > ul > li > button {
-  width: 35px;
+.table > .table__right > ul > li > button {
+  width: 70px;
   height: 30px;
-  background-color: #d2d4d6;
-  border: 1px solid #b2b4b6;
+  background-color: #df0;
+  border: 1px solid rgba(0, 0, 0, 0.6);
   color: black;
   font-weight: bold;
   position: absolute;
   top: 4px;
   right: 4px;
+  text-transform: capitalize;
+}
+.table > .table__right > ul > li > button:disabled {
+  opacity: 0.5;
+}
+.table > .table__right > ul > li > button:hover:not(:disabled) {
+  background-color: #ffc;
+}
+.table > .table__results {
+  border-radius: 0 10px 10px 0;
+}
+.table > .table__results > ul > li {
+  font-size: 18px;
+  padding: 4px 0 0 0;
+}
+.table > .table__results {
+  width: 20%;
+  background-color: aliceblue;
+}
+.table > .table__left,
+.table > .table__right {
+  border-right: 2px solid black;
+}
+.table > .table__left > ul,
+.table > .table__right > ul,
+.table > .table__results > ul {
+  list-style-type: none;
+  list-style-position: inside;
+  margin: 0;
+  padding: 0;
+}
+.table > .table__left > ul > li,
+.table > .table__left > ul > li,
+.table > .table__left > ul > li,
+.table > .table__right > ul > li,
+.table > .table__right > ul > li,
+.table > .table__right > ul > li,
+.table > .table__results > ul > li,
+.table > .table__results > ul > li,
+.table > .table__results > ul > li {
+  height: 40px;
+  border-bottom: 2px solid black;
+  font-weight: bold;
+  text-align: center;
+}
+.table > .table__left > ul > li:last-of-type, .table > .table__left > ul > li:last-of-type, .table > .table__left > ul > li:last-of-type,
+.table > .table__left > ul > li:last-of-type,
+.table > .table__left > ul > li:last-of-type,
+.table > .table__left > ul > li:last-of-type,
+.table > .table__left > ul > li:last-of-type,
+.table > .table__left > ul > li:last-of-type,
+.table > .table__left > ul > li:last-of-type,
+.table > .table__right > ul > li:last-of-type,
+.table > .table__right > ul > li:last-of-type,
+.table > .table__right > ul > li:last-of-type,
+.table > .table__right > ul > li:last-of-type,
+.table > .table__right > ul > li:last-of-type,
+.table > .table__right > ul > li:last-of-type,
+.table > .table__right > ul > li:last-of-type,
+.table > .table__right > ul > li:last-of-type,
+.table > .table__right > ul > li:last-of-type,
+.table > .table__results > ul > li:last-of-type,
+.table > .table__results > ul > li:last-of-type,
+.table > .table__results > ul > li:last-of-type,
+.table > .table__results > ul > li:last-of-type,
+.table > .table__results > ul > li:last-of-type,
+.table > .table__results > ul > li:last-of-type,
+.table > .table__results > ul > li:last-of-type,
+.table > .table__results > ul > li:last-of-type,
+.table > .table__results > ul > li:last-of-type {
+  border-bottom: none;
 }
 
-#tabla > #right > ul > li > button:hover {
-  background-color: #e2e4e6;
-  cursor: pointer;
+.correct-all {
+  display: none;
+  margin: 20px auto 0 auto;
+}
+.correct-all.show {
+  display: block;
 }
 
-#aciertos {
+.hits {
   width: 400px;
-  height: 50px;
-  line-height: 50px;
   background-color: aliceblue;
   border: 2px solid black;
   border-radius: 10px;
-  font-size: 18px;
+  color: #287;
+  display: none;
+  font-size: 28px;
   font-weight: bold;
-  margin: 40px auto 0 auto;
+  margin: 20px auto 0 auto;
+  padding: 10px 0;
   text-align: center;
+}
+.hits.show {
+  display: block;
 }

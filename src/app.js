@@ -1,14 +1,19 @@
 ;(function () {
-  var seleccion = document.querySelector('#seleccion')
-  var spansNumero = document.querySelectorAll('#tabla > #left > ul > li > span')
+  var table = document.querySelector('.table')
+  var selection = document.querySelector('.selection')
+  var spanNumbers = document.querySelectorAll(
+    '.table > .table__left > ul > li > span'
+  )
   var inputs = document.querySelectorAll("input[type='number']")
-  var resultadosInfo = document.querySelectorAll('#results > ul > li')
+  var resultsInfo = document.querySelectorAll('.results > ul > li')
   var buttonsOk = document.querySelectorAll('button')
-  var divAciertos = document.querySelector('#aciertos > span')
-  var capa = document.querySelector('#capa')
-  var numeroSeleccionado = null
-  var aciertos = 0
-  var resultados = [
+  var hitsEl = document.querySelector('.hits')
+  var hitsSpan = document.querySelector('.hits > span')
+  var layer = document.querySelector('.layer')
+  var correctAllBtn = document.querySelector('.correct-all')
+  var selectedNumber = null
+  var hits = 0
+  var results = [
     [1, 2, 3, 4, 5, 6, 7, 8, 9, 10],
     [2, 4, 6, 8, 10, 12, 14, 16, 18, 20],
     [3, 6, 9, 12, 15, 18, 21, 24, 27, 30],
@@ -21,41 +26,33 @@
     [10, 20, 30, 40, 50, 60, 70, 80, 90, 100],
   ]
 
-  seleccion.addEventListener('change', function () {
+  selection.addEventListener('change', function () {
     inputs.forEach(function (input) {
       input.value = null
     })
 
-    resultadosInfo.forEach(function (res) {
+    resultsInfo.forEach(function (res) {
       res.innerHTML = '🤔'
     })
 
-    aciertos = 0
-    divAciertos.innerHTML = aciertos
-    numeroSeleccionado = this.value
+    hits = 0
+    hits.innerHTML = hits
+    selectedNumber = this.value
 
-    if (numeroSeleccionado) {
-      buttonsOk.forEach(function (button) {
-        button.removeAttribute('disabled')
-      })
+    if (selectedNumber) {
+      table.classList.add('show')
+      hitsEl.classList.add('show')
+      correctAllBtn.classList.add('show')
 
-      inputs.forEach(function (input) {
-        input.removeAttribute('disabled')
-      })
-
-      spansNumero.forEach(function (spanNumero) {
-        spanNumero.innerHTML = numeroSeleccionado
+      spanNumbers.forEach(function (spanNumero) {
+        spanNumero.innerHTML = selectedNumber
       })
     } else {
-      buttonsOk.forEach(function (button) {
-        button.setAttribute('disabled', 'disabled')
-      })
+      table.classList.remove('show')
+      hitsEl.classList.remove('show')
+      correctAllBtn.classList.remove('show')
 
-      inputs.forEach(function (input) {
-        input.setAttribute('disabled', 'disabled')
-      })
-
-      spansNumero.forEach(function (spanNumero) {
+      spanNumbers.forEach(function (spanNumero) {
         spanNumero.innerHTML = '-'
       })
     }
@@ -65,23 +62,23 @@
     button.addEventListener('click', function (event) {
       var id = parseInt(event.target.id.split('-')[1])
       var inputValue = parseInt(inputs[id - 1].value)
-      var resultValue = resultados[numeroSeleccionado - 1][id - 1]
+      var resultValue = results[selectedNumber - 1][id - 1]
 
       if (inputValue !== resultValue) {
-        resultadosInfo[id - 1].innerHTML = '❌'
+        resultsInfo[id - 1].innerHTML = '❌'
       } else {
-        resultadosInfo[id - 1].innerHTML = '✅'
+        resultsInfo[id - 1].innerHTML = '✅'
       }
 
-      aciertos = 0
-      resultadosInfo.forEach(function (res) {
-        if (res.innerHTML === '✅') aciertos++
+      hits = 0
+      resultsInfo.forEach(function (res) {
+        if (res.innerHTML === '✅') hits++
       })
-      divAciertos.innerHTML = aciertos
+      hitsSpan.innerHTML = hits
 
-      if (aciertos === 10) {
+      if (hits === 10) {
         setTimeout(function () {
-          capa.style.display = 'block'
+          layer.style.display = 'block'
           setTimeout(function () {
             location.reload()
           }, 2000)

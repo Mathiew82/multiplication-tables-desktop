@@ -1,0 +1,12 @@
+@mixin btn {
+  background-color: aliceblue;
+  border: 2px solid black;
+  border-radius: 10px;
+  font-family: 'Wash Your Hand';
+  font-size: 24px;
+  padding: 8px 15px;
+
+  &:hover {
+    background-color: aqua;
+  }
+}

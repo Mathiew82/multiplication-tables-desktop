@@ -9,26 +9,28 @@
   <body>
     <h1>Tablas de Multiplicar</h1>
 
-    <div id="capa">
+    <div class="layer">
       <img src="../images/bien_hecho.png" alt="Bien Hecho" />
     </div>
 
-    <select name="seleccion" id="seleccion">
-      <option value="">Selecciona la tabla</option>
-      <option value="1">1</option>
-      <option value="2">2</option>
-      <option value="3">3</option>
-      <option value="4">4</option>
-      <option value="5">5</option>
-      <option value="6">6</option>
-      <option value="7">7</option>
-      <option value="8">8</option>
-      <option value="9">9</option>
-      <option value="10">10</option>
-    </select>
+    <div class="wrapper-selection">
+      <select name="selection" class="selection">
+        <option value="">Selecciona la tabla</option>
+        <option value="1">1</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+        <option value="4">4</option>
+        <option value="5">5</option>
+        <option value="6">6</option>
+        <option value="7">7</option>
+        <option value="8">8</option>
+        <option value="9">9</option>
+        <option value="10">10</option>
+      </select>
+    </div>
 
-    <div id="tabla">
-      <div id="left">
+    <div class="table">
+      <div class="table__left">
         <ul>
           <li><span>-</span> x 1</li>
           <li><span>-</span> x 2</li>
@@ -42,51 +44,91 @@
           <li><span>-</span> x 10</li>
         </ul>
       </div>
-      <div id="right">
+      <div class="table__right">
         <ul>
           <li>
-            <input type="number" min="1" disabled />
-            <button type="button" id="ok-1" disabled>ok</button>
+            <input
+              type="number"
+              min="1"
+              placeholder="Clic aquí para responder"
+            />
+            <button type="button" id="ok-1">corregir</button>
           </li>
           <li>
-            <input type="number" min="1" disabled />
-            <button type="button" id="ok-2" disabled>ok</button>
+            <input
+              type="number"
+              min="1"
+              placeholder="Clic aquí para responder"
+            />
+            <button type="button" id="ok-2">corregir</button>
           </li>
           <li>
-            <input type="number" min="1" disabled />
-            <button type="button" id="ok-3" disabled>ok</button>
+            <input
+              type="number"
+              min="1"
+              placeholder="Clic aquí para responder"
+            />
+            <button type="button" id="ok-3">corregir</button>
           </li>
           <li>
-            <input type="number" min="1" disabled />
-            <button type="button" id="ok-4" disabled>ok</button>
+            <input
+              type="number"
+              min="1"
+              placeholder="Clic aquí para responder"
+            />
+            <button type="button" id="ok-4">corregir</button>
           </li>
           <li>
-            <input type="number" min="1" disabled />
-            <button type="button" id="ok-5" disabled>ok</button>
+            <input
+              type="number"
+              min="1"
+              placeholder="Clic aquí para responder"
+            />
+            <button type="button" id="ok-5">corregir</button>
           </li>
           <li>
-            <input type="number" min="1" disabled />
-            <button type="button" id="ok-6" disabled>ok</button>
+            <input
+              type="number"
+              min="1"
+              placeholder="Clic aquí para responder"
+            />
+            <button type="button" id="ok-6">corregir</button>
           </li>
           <li>
-            <input type="number" min="1" disabled />
-            <button type="button" id="ok-7" disabled>ok</button>
+            <input
+              type="number"
+              min="1"
+              placeholder="Clic aquí para responder"
+            />
+            <button type="button" id="ok-7">corregir</button>
           </li>
           <li>
-            <input type="number" min="1" disabled />
-            <button type="button" id="ok-8" disabled>ok</button>
+            <input
+              type="number"
+              min="1"
+              placeholder="Clic aquí para responder"
+            />
+            <button type="button" id="ok-8">corregir</button>
           </li>
           <li>
-            <input type="number" min="1" disabled />
-            <button type="button" id="ok-9" disabled>ok</button>
+            <input
+              type="number"
+              min="1"
+              placeholder="Clic aquí para responder"
+            />
+            <button type="button" id="ok-9">corregir</button>
           </li>
           <li>
-            <input type="number" min="1" disabled />
-            <button type="button" id="ok-10" disabled>ok</button>
+            <input
+              type="number"
+              min="1"
+              placeholder="Clic aquí para responder"
+            />
+            <button type="button" id="ok-10">corregir</button>
           </li>
         </ul>
       </div>
-      <div id="results">
+      <div class="table__results">
         <ul>
           <li>🤔</li>
           <li>🤔</li>
@@ -102,7 +144,9 @@
       </div>
     </div>
 
-    <div id="aciertos">Número de aciertos = <span>0</span></div>
+    <button type="button" class="btn correct-all">Corregir todo</button>
+
+    <div class="hits">Número de aciertos = <span>0</span></div>
 
     <script src="../app.js"></script>
   </body>
