@@ -7,16 +7,24 @@
     "start": "electron .",
     "sass": "compass watch",
     "pack": "electron-builder --dir",
-    "dist": "electron-builder -mwl",
+    "dist": "electron-builder --mac --win --linux --x64",
     "icons": "./node_modules/.bin/electron-icon-maker --input=./icon.png --output=./build"
   },
-  "keywords": [],
+  "keywords": [
+    "game",
+    "maths"
+  ],
   "author": "Alberto Mateo Alcalá",
   "license": "MIT",
   "build": {
-    "appId": "Multiplication Tables.id",
+    "productName": "Multiplication Tables",
+    "appId": "com.multiplication-tables.app",
     "mac": {
-      "category": "games"
+      "category": "public.app-category.games",
+      "target": "dmg"
+    },
+    "win": {
+      "target": "nsis"
     }
   },
   "devDependencies": {

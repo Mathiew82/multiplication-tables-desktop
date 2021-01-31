@@ -33,7 +33,7 @@
   /** --- Functions --- */
   const resetTable = () => {
     addValuesToInputs(null)
-    addValuesToResultsInfo('🤔')
+    addValuesToResultsInfo(`<i class="icon-emo-sleep"></i>`)
     hits = 0
     hitsSpan.innerHTML = hits
   }
@@ -75,13 +75,16 @@
   const checkOperation = (id) => {
     const inputValue = parseInt(inputs[id - 1].value)
     const resultValue = results[selectedNumber - 1][id - 1]
-    resultsInfo[id - 1].innerHTML = inputValue !== resultValue ? '❌' : '✅'
+    resultsInfo[id - 1].innerHTML =
+      inputValue !== resultValue
+        ? `<i class="icon-emo-unhappy"></i>`
+        : `<i class="icon-emo-wink2"></i>`
   }
 
   const checkHits = () => {
     hits = 0
     resultsInfo.forEach((res) => {
-      if (res.innerHTML === '✅') hits++
+      if (res.innerHTML === `<i class="icon-emo-wink2"></i>`) hits++
     })
     hitsSpan.innerHTML = hits
   }

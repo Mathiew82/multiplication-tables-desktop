@@ -12,7 +12,7 @@ body {
 }
 
 h1 {
-  color: #287;
+  color: #147;
   font-family: 'Wash Your Hand';
   font-weight: 400;
   letter-spacing: 1px;
@@ -57,11 +57,11 @@ h1 {
     height: 0;
     border-left: 6px solid transparent;
     border-right: 6px solid transparent;
-    border-top: 8px solid black;
+    border-top: 10px solid black;
     content: '';
     position: absolute;
-    top: 19px;
-    right: 15px;
+    top: 24px;
+    right: 20px;
   }
 }
 
@@ -141,6 +141,10 @@ h1 {
         &:hover:not(:disabled) {
           background-color: #ffc;
         }
+
+        &:focus {
+          outline: none;
+        }
       }
     }
   }
@@ -149,8 +153,20 @@ h1 {
     border-radius: 0 10px 10px 0;
 
     > ul > li {
-      font-size: 18px;
-      padding: 4px 0 0 0;
+      font-size: 24px;
+      padding: 7px 0 0 0;
+
+      > .icon-emo-sleep {
+        color: #777;
+      }
+
+      > .icon-emo-unhappy {
+        color: #700;
+      }
+
+      > .icon-emo-wink2 {
+        color: #070;
+      }
     }
   }
 
@@ -192,8 +208,14 @@ h1 {
 }
 
 .correct-all {
+  background-color: #dfb;
   display: none;
   margin: 20px auto 0 auto;
+  padding-right: 15px;
+
+  > i:before {
+    margin-right: 0;
+  }
 
   &.show {
     display: block;
@@ -201,17 +223,13 @@ h1 {
 }
 
 .hits {
-  width: 400px;
-  background-color: aliceblue;
-  border: 2px solid black;
-  border-radius: 10px;
-  color: #287;
+  color: #147;
   display: none;
-  font-size: 28px;
+  font-size: 26px;
   font-weight: bold;
   margin: 20px auto 0 auto;
-  padding: 10px 0;
   text-align: center;
+  text-shadow: 1px 1px 0 white;
 
   &.show {
     display: block;
